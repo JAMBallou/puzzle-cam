@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Puzzle Cam</title>
+  <script src="main.js"></script>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body onload="main()">
+  <canvas id="canvas"></canvas>
+  <canvas id="colorCanvas"></canvas>
+
+  <div id="menuItems" class="menu">
+    <div id="menu">
+      <div id="controls">
+        <img src="title.png" alt="Title image">
+        <br>
+        <br>
+        <label>Difficulty: </label>
+        <select name="difficulty" id="difficulty" title="Difficulty" onchange="setDifficulty()">
+          <option value="easy">Easy</option>
+          <option value="medium">Medium</option>
+          <option value="hard">Hard</option>
+          <option value="insane">Insane</option>
+        </select>
+        <br>
+        <br>
+        <button onclick="restart()">Start</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="endScreen" class="menu">
+    <img src="title.png" alt="Title image">
+    <br>
+    <br>
+    <div id="scoreValue"></div>
+    <input type="text" id="name" placeholder="Your name">
+    <button onclick="saveScore()" id="saveBtn" type="button">Save</button>
+    <br>
+    <br>
+    <button onclick="showScores()" id="showBtn" type="button">Scores</button>
+    <button onclick="showMenu()">Restart</button>
+  </div>
+
+  <div id="scoresScreen" class="menu">
+    <img src="title.png" alt="Title image">
+    <br>
+    <br>
+    <div id="scoresContainer"></div>
+    <br>
+    <button onclick="closeScores()" type="button">Back</button>
+  </div>
+
+  <div id="time"></div>
+</body>
+</html>
